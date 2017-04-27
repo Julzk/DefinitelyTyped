@@ -11,14 +11,14 @@ declare type GlobalObject = Object;
  */
 declare module ol {
     /**
-      * Error object thrown when an assertion failed. This is an ECMA-262 Error,
-      * extended with a `code` property.
-      * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error}
-      * @constructor
-      * @extends {Error}
-      * @implements {oli.AssertionError}
-      * @param {number} code Error code.
-      */
+     * Error object thrown when an assertion failed. This is an ECMA-262 Error,
+     * extended with a `code` property.
+     * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error}
+     * @constructor
+     * @extends {Error}
+     * @implements {oli.AssertionError}
+     * @param {number} code Error code.
+     */
     class AssertionError extends Error {
         /**
          * Error object thrown when an assertion failed. This is an ECMA-262 Error,
@@ -238,16 +238,16 @@ declare module ol {
         type EventType = string;
 
         /**
-          * @classdesc
-          * Events emitted by {@link ol.Collection} instances are instances of this
-          * type.
-          *
-          * @constructor
-          * @extends {ol.events.Event}
-          * @implements {oli.Collection.Event}
-          * @param {ol.Collection.EventType} type Type.
-          * @param {*=} opt_element Element.
-          */
+         * @classdesc
+         * Events emitted by {@link ol.Collection} instances are instances of this
+         * type.
+         *
+         * @constructor
+         * @extends {ol.events.Event}
+         * @implements {oli.Collection.Event}
+         * @param {ol.Collection.EventType} type Type.
+         * @param {*=} opt_element Element.
+         */
         class Event extends ol.events.Event {
             /**
              * @classdesc
@@ -774,10 +774,10 @@ declare module ol {
             type Property = string;
 
             /**
-            * Units for the scale line. Supported values are `'degrees'`, `'imperial'`,
-            * `'nautical'`, `'metric'`, `'us'`.
-            * @enum {string}
-            */
+             * Units for the scale line. Supported values are `'degrees'`, `'imperial'`,
+             * `'nautical'`, `'metric'`, `'us'`.
+             * @enum {string}
+             */
             type Units = "degrees" | "imperial" | "nautical" | "metric" | "us";
         }
 
@@ -1741,7 +1741,7 @@ declare module ol {
      *     include a Geometry associated with a `geometry` key.
      * @api stable
      */
-    class Feature extends ol.Object {
+    class Feature extends Object {
         /**
          * @classdesc
          * A vector object for geographic features with a geometry and other
@@ -3752,7 +3752,7 @@ declare module ol {
             /**
              * Create a simplified version of this geometry.  For linestrings, this uses
              * the the {@link
-             * https://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
+                * https://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
              * Douglas Peucker} algorithm.  For polygons, a quantization-based
              * simplification is used to preserve topology.
              * @function
@@ -4919,28 +4919,28 @@ declare module ol {
                  * @param {ol.proj.Projection=} opt_projection Projection.
                  */
                 constructor(type: interaction.DragAndDropEventType, file: File, opt_features?: Feature[], opt_projection?: proj.Projection);
-    
+
                 /**
                  * The features parsed from dropped data.
                  * @type {Array.<Feature>|undefined}
                  * @api stable
                  */
                 features: Feature[];
-    
+
                 /**
                  * The dropped file.
                  * @type {File}
                  * @api stable
                  */
                 file: File;
-    
+
                 /**
                  * The feature projection.
                  * @type {ol.proj.Projection|undefined}
                  * @api
                  */
                 projection: proj.Projection;
-    
+
             }
 
         }
@@ -5023,7 +5023,7 @@ declare module ol {
                  * @implements {oli.DragBoxEvent}
                  */
                 constructor(type: string, coordinate: Coordinate, mapBrowserEvent: MapBrowserEvent);
-        
+
                 /**
                  * The coordinate of the drag event.
                  * @const
@@ -5031,14 +5031,14 @@ declare module ol {
                  * @api stable
                  */
                 coordinate: Coordinate;
-        
+
                 /**
                  * @const
                  * @type {ol.MapBrowserEvent}
                  * @api
                  */
                 mapBrowserEvent: MapBrowserEvent;
-        
+
             }
 
         }
@@ -5195,14 +5195,14 @@ declare module ol {
                  * @param {ol.Feature} feature The feature drawn.
                  */
                 constructor(type: interaction.DrawEventType, feature: Feature);
-    
+
                 /**
                  * The feature being drawn.
                  * @type {ol.Feature}
                  * @api stable
                  */
                 feature: Feature;
-    
+
             }
 
         }
@@ -5491,21 +5491,21 @@ declare module ol {
                  *     {@link ol.MapBrowserPointerEvent}.
                  */
                 constructor(type: ModifyEventType, features: Collection<Feature>, mapBrowserPointerEvent: MapBrowserPointerEvent);
-    
+
                 /**
                  * The features being modified.
                  * @type {ol.Collection.<Feature>}
                  * @api
                  */
                 features: Collection<Feature>;
-    
+
                 /**
                  * Associated {@link ol.MapBrowserEvent}.
                  * @type {ol.MapBrowserEvent}
                  * @api
                  */
                 mapBrowserEvent: MapBrowserEvent;
-    
+
             }
 
         }
@@ -5713,28 +5713,28 @@ declare module ol {
                  * @constructor
                  */
                 constructor(type: string, selected: Feature[], deselected: Feature[], mapBrowserEvent: MapBrowserEvent);
-    
+
                 /**
                  * Selected features array.
                  * @type {Array.<Feature>}
                  * @api
                  */
                 selected: Feature[];
-    
+
                 /**
                  * Deselected features array.
                  * @type {Array.<Feature>}
                  * @api
                  */
                 deselected: Feature[];
-    
+
                 /**
                  * Associated {@link ol.MapBrowserEvent}.
                  * @type {ol.MapBrowserEvent}
                  * @api
                  */
                 mapBrowserEvent: MapBrowserEvent;
-    
+
             }
 
         }
@@ -5913,14 +5913,14 @@ declare module ol {
                  * @param {ol.Coordinate} coordinate The event coordinate.
                  */
                 constructor(type: interaction.TranslateEventType, features: Collection<Feature>, coordinate: Coordinate);
-    
+
                 /**
                  * The features being translated.
                  * @type {ol.Collection.<Feature>}
                  * @api
                  */
                 features: Collection<Feature>;
-    
+
                 /**
                  * The coordinate of the drag event.
                  * @const
@@ -5928,7 +5928,7 @@ declare module ol {
                  * @api
                  */
                 coordinate: Coordinate;
-    
+
             }
 
         }
@@ -7845,18 +7845,18 @@ declare module ol {
 
         }
 
-         /**
-          * Register proj4. If not explicitly registered, it will be assumed that
-          * proj4js will be loaded in the global namespace. For example in a
-          * browserify ES6 environment you could use:
-          *
-          *     import ol from 'openlayers';
-          *     import proj4 from 'proj4';
-          *     ol.proj.setProj4(proj4);
-          *
-          * @param {any} proj4 Proj4.
-          * @api
-          */
+        /**
+         * Register proj4. If not explicitly registered, it will be assumed that
+         * proj4js will be loaded in the global namespace. For example in a
+         * browserify ES6 environment you could use:
+         *
+         *     import ol from 'openlayers';
+         *     import proj4 from 'proj4';
+         *     ol.proj.setProj4(proj4);
+         *
+         * @param {any} proj4 Proj4.
+         * @api
+         */
         function setProj4(proj4: any): void;
 
         /**
@@ -9888,7 +9888,7 @@ declare module ol {
     /**
      * @classdesc
      * Class to create objects that can be used with {@link
-     * ol.geom.Polygon.circular}.
+        * ol.geom.Polygon.circular}.
      *
      * For example to create a sphere whose radius is equal to the semi-major
      * axis of the WGS84 ellipsoid:
@@ -9905,7 +9905,7 @@ declare module ol {
         /**
          * @classdesc
          * Class to create objects that can be used with {@link
-         * ol.geom.Polygon.circular}.
+            * ol.geom.Polygon.circular}.
          *
          * For example to create a sphere whose radius is equal to the semi-major
          * axis of the WGS84 ellipsoid:
@@ -12630,6 +12630,7 @@ declare module olx {
      * @namespace olx.layer
      */
     module layer {
+        import Feature = ol.Feature;
         /**
          * @typedef {{opacity: (number|undefined),
          *     visible: (boolean|undefined),
@@ -12760,21 +12761,9 @@ declare module olx {
         }
 
 
-        /**
-         * @typedef {{renderOrder: (function(feature1: ol.Feature, feature2: ol.Feature):number|null|undefined),
-         *     minResolution: (number|undefined),
-         *     maxResolution: (number|undefined),
-         *     opacity: (number|undefined),
-         *     renderBuffer: (number|undefined),
-         *     source: (ol.source.Vector|undefined),
-         *     map: (ol.Map|undefined),
-         *     style: (ol.style.Style|Array.<ol.style.Style>|ol.StyleFunction|undefined),
-         *     updateWhileAnimating: (boolean|undefined),
-         *     updateWhileInteracting: (boolean|undefined),
-         *     visible: (boolean|undefined)}}
-         */
+
         interface VectorOptions {
-            renderOrder?: (feature1: ol.Feature, feature2: ol.Feature) => number;
+            renderOrder?: (feature1: Feature, feature2: ol.Feature) => number;
             map?: ol.Map;
             extent?: ol.Extent;
             minResolution?: number;
@@ -13902,11 +13891,11 @@ declare module olx {
     }
 
     /**
-    * Object literal with options for the {@link ol.Map#forEachFeatureAtPixel} and
-    * {@link ol.Map#hasFeatureAtPixel} methods.
-    * @typedef {{layerFilter: ((function(ol.layer.Layer): boolean)|undefined),
+     * Object literal with options for the {@link ol.Map#forEachFeatureAtPixel} and
+     * {@link ol.Map#hasFeatureAtPixel} methods.
+     * @typedef {{layerFilter: ((function(ol.layer.Layer): boolean)|undefined),
     *     hitTolerance: (number|undefined)}}
-    */
+     */
     interface AtPixelOptions {
         layerFilter?: ((layer: ol.layer.Layer) => boolean)
         hitTolerance?: number
