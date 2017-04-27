@@ -12761,9 +12761,9 @@ declare module olx {
         }
 
 
-
+        
         interface VectorOptions {
-            renderOrder?: (feature1: Feature, feature2: ol.Feature) => number;
+            renderOrder?: (feature1: Feature, feature2: Feature) => number;
             map?: ol.Map;
             extent?: ol.Extent;
             minResolution?: number;
